@@ -1,0 +1,243 @@
+/* --- CONFIGURATION ET RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    background-color: #f0f0f2;
+    color: #1a1a1a;
+    line-height: 1.5;
+    padding: 40px 15px;
+}
+
+/* CONTENEUR STRUCTUREL - IDEM FEUILLE A4 DE LA CAPTURE */
+.cv-layout {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    display: flex;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* --- COLONNE GAUCHE (Rose poudré / Beige très clair) --- */
+.left-sidebar {
+    width: 35%;
+    background-color: #f3e5e1; /* Code couleur exact trouvé sur l'image */
+    padding: 40px 25px;
+}
+
+.photo-wrapper {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.aside-section {
+    margin-bottom: 35px;
+}
+
+/* Formatage du bloc contact avec icônes */
+.contact-info p {
+    font-size: 0.88rem;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-info i {
+    color: #000000;
+    font-size: 0.95rem;
+    width: 15px;
+    text-align: center;
+}
+
+/* Alignement des langues de la capture */
+.languages-table {
+    width: 100%;
+    font-size: 0.88rem;
+    border-collapse: collapse;
+}
+
+.languages-table td {
+    padding-bottom: 10px;
+    vertical-align: top;
+}
+
+.languages-table td:first-child {
+    font-weight: 500;
+    width: 40%;
+}
+
+.languages-table td:last-child {
+    color: #444444;
+    width: 60%;
+}
+
+/* --- COLONNE DROITE (Blanche) --- */
+.main-content {
+    width: 65%;
+    background-color: #ffffff;
+    padding: 40px 35px;
+}
+
+/* En-tête avec les styles de police de l'image */
+.main-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.candidate-name {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #a46d65; /* Marron/vieux rose exact de votre titre */
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.target-job {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #a46d65;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    letter-spacing: 0.2px;
+}
+
+.schedule-info {
+    font-size: 0.82rem;
+    color: #a46d65;
+    font-weight: 500;
+}
+
+/* Résumé introductif */
+.summary-text {
+    margin-bottom: 35px;
+}
+
+.summary-text p {
+    font-size: 0.92rem;
+    text-align: justify;
+    color: #222222;
+    line-height: 1.5;
+}
+
+.main-section {
+    margin-bottom: 35px;
+}
+
+/* --- EFFET UNIQUE DES TITRES ENCADRÉS DE LA CAPTURE --- */
+.section-title-center {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #a46d65; /* Même teinte marron/vieux rose */
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+    position: relative;
+    display: block;
+}
+
+/* La barre épaisse rose clair positionnée derrière/sous le texte */
+.section-title-center::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 170px; /* Longueur de la ligne */
+    height: 6px; /* Épaisseur du surlignage */
+    background-color: #f1dad4; /* Couleur rose très pâle du surlignage */
+    z-index: 1;
+}
+
+/* Style des Blocs d'expérience */
+.xp-block {
+    margin-bottom: 22px;
+}
+
+.xp-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #43211c; /* Marron très foncé presque noir */
+    margin-bottom: 2px;
+}
+
+.xp-date {
+    font-size: 0.88rem;
+    color: #666666;
+    margin-bottom: 8px;
+}
+
+/* Système global de listes à puces propres de la capture */
+.custom-bullets {
+    list-style: none;
+}
+
+.custom-bullets li {
+    font-size: 0.88rem;
+    color: #222222;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    text-align: justify;
+}
+
+.custom-bullets li span:first-child {
+    font-weight: bold;
+    color: #000000;
+}
+
+/* Liste verticale simple pour les centres d'intérêt */
+.interests-vertical {
+    list-style: none;
+    padding-left: 15px;
+}
+
+.interests-vertical li {
+    font-size: 0.88rem;
+    margin-bottom: 6px;
+    color: #222222;
+}
+
+/* --- RÈGLES DE CONVERSION POUR ÉCRAN SMARTPHONE --- */
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    .cv-layout {
+        flex-direction: column; /* On empile la colonne gauche puis la colonne droite */
+    }
+
+    .left-sidebar {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 35px 20px;
+    }
+
+    .candidate-name {
+        font-size: 2.2rem;
+    }
+
+    .avatar {
+        width: 130px;
+        height: 130px;
+    }
+}
